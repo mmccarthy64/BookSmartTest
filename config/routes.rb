@@ -24,14 +24,12 @@ Rails.application.routes.draw do
   get '/genres/destroy'
 
   get '/users', to: 'users#index', as: 'users'
-  get '/users/new'
-  get '/users/:id', to: 'users#show', as: 'user'
   get '/users/edit'
   get '/users/update'
   get '/users/create'
   get '/users/destroy'
 
-  root to: 'pages#home'
+  root to: 'users#show'
 
   #  get '/users/new', to: 'users#new', as: 'new_user'
   # root 'static#home'

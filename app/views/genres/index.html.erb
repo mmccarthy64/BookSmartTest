@@ -2,6 +2,6 @@
 <p>Find me in app/views/genre/index.html.erb</p>
 
 <% @genres.each do |genre| %>
-    <%= link_to genre.name, genres_path(genre) %> | <%= genre.book_count %>
+    <%= link_to genre.name, genre_path(genre) %> | <%= genre.book_count %>
     <br>
 <% end %>

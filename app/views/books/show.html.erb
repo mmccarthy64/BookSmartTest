@@ -1,2 +1,14 @@
-<h1>Book#show</h1>
-<p>Find me in app/views/book/show.html.erb</p>
+<h1><%= @book.title %></h1>
+<h2>By <%= @book.author %></h2>
+<p><%= @book.pages %> pages</p>
+<p><%= @book.genre.name %></p>
+
+<p>Have you read this book?</p>
+<%= form_for @book do |f| %>
+    <%= f.hidden_field :read %><br />
+    <%= f.submit "I have read this book.", class:"btn btn-light" %>
+<% end %>
+<%= form_for @book do |f| %>
+    <%= f.hidden_field :to_read %><br />
+    <%= f.submit "I want to read this book.", class:"btn btn-light" %>
+<% end %>

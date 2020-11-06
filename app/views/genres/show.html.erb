@@ -2,5 +2,5 @@
 <p>Find me in app/views/genre/show.html.erb</p>
 
 <% @genre.books.each do |book| %>
-    <%= link_to book.title, books_path(book) %> | <%= book.author %> | <%= book.pages %><br>
+    <%= link_to book.title, book_path(book) %> | <%= book.author %> | <%= book.pages %><br>
 <% end %>
