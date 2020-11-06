@@ -6,9 +6,5 @@
 <p>Have you read this book?</p>
 <%= form_for @book do |f| %>
     <%= f.hidden_field :read %><br />
-    <%= f.submit "I have read this book.", class:"btn btn-light" %>
-<% end %>
-<%= form_for @book do |f| %>
-    <%= f.hidden_field :to_read %><br />
-    <%= f.submit "I want to read this book.", class:"btn btn-light" %>
+    <%= f.submit "Add this book to my library", class:"btn btn-light" %>
 <% end %>
