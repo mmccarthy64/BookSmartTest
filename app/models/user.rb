@@ -13,5 +13,5 @@ class User < ApplicationRecord
   end
 
   has_many :comments
-  has_many :books, :through => :comments
+  has_many :books, :through => :user_book
 end
