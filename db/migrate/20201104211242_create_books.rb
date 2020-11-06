@@ -5,8 +5,6 @@ class CreateBooks < ActiveRecord::Migration[6.0]
       t.string :author
       t.integer :pages
       t.integer :genre_id
-      t.boolean :read, :default => false
-      t.boolean :to_read, :default => false
 
       t.timestamps
     end
