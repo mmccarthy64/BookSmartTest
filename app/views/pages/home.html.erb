@@ -1,6 +1,8 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
 
+<%= link_to "My Books", users_show_path %>
+
 
 <% if current_user %>
     <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
