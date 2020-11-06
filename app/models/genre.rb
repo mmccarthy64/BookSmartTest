@@ -3,6 +3,6 @@ class Genre < ApplicationRecord
     has_many :users
 
     def book_count
-        genre.books.count
+        self.books.count
     end
 end
