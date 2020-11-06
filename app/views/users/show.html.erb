@@ -1,1 +1,7 @@
-<h1>Welcome, <%= @user.first_name %></h1>
+<% if @user.first_name.nil? %>
+    <h1>Welcome</h1>
+<% else %>
+    <h1>Welcome, @user.first_name</h1>
+<%end%>
+
+<%= link_to "Show Genres", genres_index_path %>
