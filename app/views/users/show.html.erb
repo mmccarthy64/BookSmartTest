@@ -1,25 +1,21 @@
-<% if @user.first_name.nil? %>
+<% if current_user.name.nil? %>
     <h1>Welcome</h1>
 <% else %>
-    <h1>Welcome, <%= @user.first_name %></h1>
+    <h1>Welcome, <%= current_user.name %></h1>
 <%end%>
 
 <%= link_to "View Books by Genre", genres_path %>
 <br>
 
-<% if current_user %>
+
     <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-<% else %>
-    <%= link_to "Sign Up", new_user_registration_path %>
-    <%= link_to "Log in", new_user_session_path %>
-<% end %>
-<br>
+
 
 <h2>My Library</h2>
-<% if current_user.library.books.nil? %>
+<% if current_user.books.nil? %>
     <%= link_to "Your library is empty. Find books to add to your library.", books_path%>
 <% else %>
-    <% current_user.library.books.each do |book| %>
-        <%= book.title %> | <%= book.author %> | <%= book.genre %><br>
+    <% current_user.books.each do |book| %>
+        <%= book.title %> | <%= book.author %> | <%= book.genre.name %><br>
     <% end %>
 <% end %>

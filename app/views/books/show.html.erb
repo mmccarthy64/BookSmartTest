@@ -3,8 +3,7 @@
 <p><%= @book.pages %> pages</p>
 <p><%= @book.genre.name %></p>
 
-<p>Have you read this book?</p>
-<%= form_for @book do |f| %>
+<%= form_for @library do |f| %>
     <%= f.hidden_field :read %><br />
     <%= f.submit "Add this book to my library", class:"btn btn-light" %>
 <% end %>
