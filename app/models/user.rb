@@ -12,5 +12,6 @@ class User < ApplicationRecord
     end      
   end
 
-
+  belongs_to :library
+  has_many :books, :through => :libraries
 end
