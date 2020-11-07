@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   get '/books', to: 'books#index', as: 'books'
-  get '/books/new'
+  get '/books/new', to: 'books#new', as: 'new_book'
   get '/books/:id', to: 'books#show', as: 'book'
-  get '/books/edit'
-  get '/books/update'
-  get '/books/create'
-  get '/books/destroy'
+  get '/books/:id/edit', to: 'books#edit', as: 'edit_book'
+  patch '/books/:id', to: 'books#update'
+  post '/books', to: 'books#create'
+  delete '/books/destroy'
 
 
   get '/users', to: 'users#index', as: 'users'

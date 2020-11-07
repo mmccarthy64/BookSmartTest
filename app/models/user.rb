@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  after_create :create_library
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -14,11 +13,6 @@ class User < ApplicationRecord
     end      
   end
 
-  def create_library
-    library = Library.create(user_id: self.id)
-  end
-
   has_many :libraries
-  has_many :comments
   has_many :books, :through => :libraries
 end
