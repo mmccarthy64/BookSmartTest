@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
-  get '/comments', to: 'comments#index', as: 'comments'
-  get '/comments/new'
-  get '/comments/:id', to: 'comments#show', as: 'comment'
-  get '/comments/edit'
-  get '/comments/update'
-  get '/comments/create'
-  get '/comments/destroy'
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
   get '/books', to: 'books#index', as: 'books'
   get '/books/new'
@@ -15,13 +9,6 @@ Rails.application.routes.draw do
   get '/books/create'
   get '/books/destroy'
 
-  get '/genres', to: 'genres#index', as: 'genres'
-  get '/genres/new'
-  get '/genres/:id', to: 'genres#show', as: 'genre'
-  get '/genres/edit'
-  get '/genres/update'
-  get '/genres/create'
-  get '/genres/destroy'
 
   get '/users', to: 'users#index', as: 'users'
   get '/users/edit'
@@ -30,6 +17,7 @@ Rails.application.routes.draw do
   get '/users/destroy'
 
   root to: 'users#show'
+  
 
   #  get '/users/new', to: 'users#new', as: 'new_user'
   # root 'static#home'
@@ -48,6 +36,4 @@ Rails.application.routes.draw do
   # post '/attractions', to: 'attractions#create'
   # post '/rides', to:"rides#create", as: 'rides'
   # delete '/attractions/', to: 'attractions#destroy'
-
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 end

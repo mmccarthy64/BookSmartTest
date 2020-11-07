@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  after_create :create_library
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -10,6 +12,10 @@ class User < ApplicationRecord
     user.email = auth.info.email
     user.password = Devise.friendly_token[0,20]
     end      
+  end
+
+  def create_library
+    library = Library.create(user_id: self.id)
   end
 
   has_many :libraries
